@@ -20,11 +20,6 @@ function generarNumerosAleatorios(cantidad, minimo, maximo) {
     return numeros;
 }
 
-const elemento = randomFromArray(lista);
-console.log(elemento);
-
-console.log(randomFromArray(["active", "inactive"]));
-
 const users = [];
 for (let i = 0; i < 500; i++) {
     const colorAleatorio = randomFromArray(colores);
@@ -32,9 +27,12 @@ for (let i = 0; i < 500; i++) {
     const numerosAleatorios = generarNumerosAleatorios(4, 0, 9);
     const username = `${colorAleatorio}${futbolistaAleatorio}${numerosAleatorios}`;
 
+    // Generando la contraseña fusionada entre color, futbolista y números
+    const password = `${colorAleatorio}${futbolistaAleatorio}${numerosAleatorios}`;
+
     users.push({
         username: username,
-        password: `password${i + 1}`,
+        password: password, // Aquí ya asignamos la contraseña generada
         email: `${username}@gmail.com`,
         status: "active"
     });
