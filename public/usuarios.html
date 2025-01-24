@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>usuarios</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>nombre</td>
+                <td>Email</td>
+                <td>Password</td>
+                <td>Status</td>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>pepito</td>
+                <td>pepito@gmail.com</td>
+                <td>Superpassword</td>
+                <td>activo</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        fetch("/users")
+        .then(data => data.json())
+        .then(usuarios =>{
+            console.log(usuarios)
+            const div = document.createElement("div");
+                    div.className = "usuarios";                  
+                    img.alt = users.name;                   
+                    const name = document.createElement("p");
+                    name.textContent = users.name;                    
+                    div.appendChild(name);                  
+                    document.body.appendChild(div);
+        })
+    </script>
+</body>
+</html>

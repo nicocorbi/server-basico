@@ -20,7 +20,7 @@ function generarNumerosAleatorios(cantidad, minimo, maximo) {
 }
 
 const users = [];
-for (let i = 0; i < 500; i++) {
+for (let i = 0; i < 10; i++) {
     // Generar el username
     const colorAleatorio = randomFromArray(colores);
     const futbolistaAleatorio = randomFromArray(futbolistas);
@@ -44,12 +44,18 @@ for (let i = 0; i < 500; i++) {
     });
 }
 
-app.get("/", (req, res) => {
-    res.send("Hola mundo");
-});
+//app.get("/", (req, res) => {
+    //res.send("Hola mundo");
+//});
+app.use(express.static("public"))
 
 app.get("/users", (req, res) => {
     res.json(users);
+});
+app.get("/users/:id", (req, res) => {
+    const id = req.params.id;
+    console.log(id)
+    res.json(users[id]);
 });
 
 app.listen(3000, () => {
